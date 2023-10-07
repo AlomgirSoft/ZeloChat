@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="login_layout_back">#61B9FF</color>
+    <color name="button_back">#61B9FF</color>
+    <color name="forget_text_color">#61B9FF</color>
+    <color name="image_boder_color">#A2D1FF</color>
+    <color name="text_click_color">#61B9FF</color>
+</resources>
