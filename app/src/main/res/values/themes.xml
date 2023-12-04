@@ -6,4 +6,8 @@
     </style>
 
     <style name="Theme.ZeloChat" parent="Base.Theme.ZeloChat" />
+
+    <style name="ShapeAppearanceOverlay.App.CornerSize8Percent" parent="">
+        <item name="cornerSize">8%</item>
+    </style>
 </resources>

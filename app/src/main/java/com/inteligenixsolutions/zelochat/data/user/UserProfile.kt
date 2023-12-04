@@ -13,5 +13,4 @@ data class UserProfile(
     val status: String = "",
     var mobile: String? = null
 
-
 )

@@ -4,17 +4,19 @@ package com.inteligenixsolutions.zelochat.ui.fragment.register
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.google.firebase.auth.FirebaseUser
+import com.inteligenixsolutions.zelochat.R
 import com.inteligenixsolutions.zelochat.base.BaseFragment
-import com.inteligenixsolutions.zelochat.data.registretion.RequestUserRegister
+import com.inteligenixsolutions.zelochat.data.registretion.User
 import com.inteligenixsolutions.zelochat.databinding.FragmentRegistretionBinding
+import com.inteligenixsolutions.zelochat.ui.fragment.login.LoginFragment
 import com.inteligenixsolutions.zelochat.utils.DummyImgLink
 import com.inteligenixsolutions.zelochat.utils.ERROR
 import com.inteligenixsolutions.zelochat.utils.SUCCESS
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 
 @AndroidEntryPoint
 
@@ -30,6 +32,7 @@ class RegistretionFragment : BaseFragment<FragmentRegistretionBinding>(FragmentR
                 SUCCESS -> {
                     Toast.makeText(requireContext(), SUCCESS, Toast.LENGTH_LONG)
                         .show()
+                   navigateTo(LoginFragment())
 
                 }
 
@@ -54,7 +57,7 @@ class RegistretionFragment : BaseFragment<FragmentRegistretionBinding>(FragmentR
                 val email = edEmail.text.toString()
                 val password = edPassword.text.toString()
 
-                val request = RequestUserRegister(
+                val request = User(
 
                     name = name,
                     email = email,
@@ -83,6 +86,12 @@ binding.allReadyhaveAccountBtn.setOnClickListener {
 
 
 
+    private fun navigateTo(fragment: Fragment) {
+        val transaction =  (activity as FragmentActivity).supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.fragmentContainerView, fragment)
 
+        transaction.commit()
+    }
 
 }

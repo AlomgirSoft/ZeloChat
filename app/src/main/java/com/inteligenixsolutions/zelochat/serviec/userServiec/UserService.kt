@@ -7,16 +7,19 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.UploadTask
 
-import com.inteligenixsolutions.zelochat.data.registretion.RequestUserRegister
+import com.inteligenixsolutions.zelochat.data.registretion.User
+import com.inteligenixsolutions.zelochat.utils.UiState
 
 
 interface UserService {
-    suspend fun createUser(request: RequestUserRegister): Task<Void>
+    suspend fun createUser(request: User): Task<Void>
 
     suspend fun getUserById(userId: String): DatabaseReference
     suspend fun getUserAllUser(): DatabaseReference
 
-    suspend fun uploadProfileImage(uri: Uri, strRef: StorageReference): UploadTask
+
+
+
 
 
 }

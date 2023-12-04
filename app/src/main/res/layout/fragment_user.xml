@@ -15,7 +15,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:cardCornerRadius="70dp"
         app:cardElevation="5dp"
-        android:layout_margin="20dp"
+
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="2dp"
 
         android:id="@+id/cardSercheView">
 
@@ -32,38 +35,42 @@
             />
 
     </androidx.cardview.widget.CardView>
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cardSercheView"
 
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginTop="25dp"
 
-        app:cardElevation="5dp"
-        app:cardCornerRadius="20dp"
 
-        android:padding="10dp"
-        >
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/userRcv"
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:background="@drawable/user_card_back"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardSercheView"
 
-            tools:listitem="@layout/item_user"
-            android:padding="10dp"/>
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginTop="5dp"
+            >
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/userRcv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
 
-    </androidx.cardview.widget.CardView>
+
+                tools:listitem="@layout/item_user"
+                android:padding="10dp"/>
+        </LinearLayout>
+
+
+
 
 
 

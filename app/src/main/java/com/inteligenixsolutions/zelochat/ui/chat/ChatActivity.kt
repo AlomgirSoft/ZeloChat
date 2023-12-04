@@ -7,15 +7,8 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.auth.FirebaseUser
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
-import com.inteligenixsolutions.zelochat.R
 import com.inteligenixsolutions.zelochat.data.chat.Chat
-import com.inteligenixsolutions.zelochat.data.registretion.RequestUserRegister
 import com.inteligenixsolutions.zelochat.databinding.ActivityChatBinding
-import com.inteligenixsolutions.zelochat.ui.fragment.profile.OthersProfileActivity
 import com.inteligenixsolutions.zelochat.utils.updateOnlineStatus
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.UUID

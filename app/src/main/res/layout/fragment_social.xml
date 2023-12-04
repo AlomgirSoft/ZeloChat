@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragment.social.SocialFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/profileImage"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+
+                android:src="@drawable/plasholder"
+                app:civ_border_color="#FF5722"
+                app:civ_border_width="1dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/galleryImageUpload"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:src="@drawable/gallery"
+                app:layout_constraintBottom_toBottomOf="@+id/fon"
+                app:layout_constraintStart_toEndOf="@+id/fon"
+                app:layout_constraintTop_toTopOf="@+id/fon" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/videoUpload"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="8dp"
+                android:src="@drawable/videocall"
+                app:layout_constraintBottom_toBottomOf="@+id/fon"
+                app:layout_constraintStart_toEndOf="@+id/galleryImageUpload"
+                app:layout_constraintTop_toTopOf="@+id/fon" />
+
+
+            <EditText
+                android:id="@+id/fon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/edit_text_back"
+
+                android:ems="10"
+
+
+                android:fontFamily="@font/aclonica"
+                android:hint="wright a post ?"
+
+
+                android:padding="10dp"
+                app:layout_constraintBottom_toBottomOf="@id/view"
+                app:layout_constraintStart_toEndOf="@id/profileImage"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.576" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="4dp"
+                android:background="#858383"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/profileImage" />
+
+
+            <HorizontalScrollView
+                android:id="@+id/horizontalScrollView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/view">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+
+                        <com.makeramen.roundedimageview.RoundedImageView
+                            android:id="@+id/storyImage"
+                            android:layout_width="130dp"
+                            android:layout_height="100dp"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="8dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/plasholder"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:riv_corner_radius="10dp"
+                            app:riv_mutate_background="true"
+                            app:riv_tile_mode="repeat" />
+
+
+                        <ImageView
+                            android:id="@+id/addIconBtn"
+                            android:layout_width="43dp"
+                            android:layout_height="45dp"
+                            android:src="@drawable/round_add_24"
+
+                            app:layout_constraintBottom_toBottomOf="@+id/storyImage"
+
+                            app:layout_constraintEnd_toEndOf="@id/storyImage"
+                            app:layout_constraintStart_toStartOf="@id/storyImage"
+
+
+                            app:layout_constraintTop_toTopOf="@id/storyImage"
+                            app:layout_constraintVertical_bias="0.38"
+                            app:tint="@color/white" />
+
+                        <TextView
+                            android:id="@+id/textView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/baloo"
+                            android:text="Create a Story"
+
+                            android:textColor="@color/white"
+                            android:textSize="16sp"
+
+
+                            app:layout_constraintEnd_toEndOf="@id/storyImage"
+
+                            app:layout_constraintStart_toStartOf="@id/storyImage"
+                            app:layout_constraintTop_toBottomOf="@+id/addIconBtn" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/storyRcv"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        android:layout_marginStart="5dp"
+                        android:layout_marginLeft="10dp"
+
+                        android:layout_marginTop="9dp" />
+
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+
+            <View
+                android:id="@+id/view1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="#858383"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/horizontalScrollView" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/deashBrodRecyclerVeiw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="8dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.84"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/view1"
+
+
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

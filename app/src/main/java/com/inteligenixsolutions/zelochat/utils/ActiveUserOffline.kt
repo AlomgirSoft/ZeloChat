@@ -1,8 +1,11 @@
 package com.inteligenixsolutions.zelochat.utils
 
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.FirebaseDatabase
+import com.inteligenixsolutions.zelochat.R
 
 object ActiveUserOffline {
 
@@ -16,5 +19,13 @@ object ActiveUserOffline {
         map["status"] = status
         databaseReference.updateChildren(map)
     }
+object ImageUriList{
+    val imageUriList = ArrayList<String>()
+}
+interface BackPressed{
+
+}
+
+
 
 }

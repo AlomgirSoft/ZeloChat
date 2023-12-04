@@ -21,28 +21,57 @@
         android:id="@+id/registretionFragment"
         android:name="com.inteligenixsolutions.zelochat.ui.fragment.register.RegistretionFragment"
         android:label="fragment_registretion"
-        tools:layout="@layout/fragment_registretion" />
+        tools:layout="@layout/fragment_registretion" >
+        <action
+            android:id="@+id/action_registretionFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.inteligenixsolutions.zelochat.ui.fragment.home.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
-        <action
-            android:id="@+id/action_homeFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_home" />
+
     <fragment
         android:id="@+id/userFragment"
         android:name="com.inteligenixsolutions.zelochat.ui.fragment.user.UserFragment"
         android:label="fragment_user"
         tools:layout="@layout/fragment_user" />
+
+
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.inteligenixsolutions.zelochat.ui.fragment.profile.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" >
+
         <action
             android:id="@+id/action_profileFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_registretionFragment"
+            app:destination="@id/registretionFragment" />
     </fragment>
+
+
+
+    <fragment
+        android:id="@+id/socialFragment"
+        android:name="com.inteligenixsolutions.zelochat.ui.fragment.social.SocialFragment"
+        android:label="fragment_social"
+        tools:layout="@layout/fragment_social" >
+        <action
+            android:id="@+id/action_socialFragment_to_userFollowFragment"
+            app:destination="@id/userFollowFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userFollowFragment"
+        android:name="com.inteligenixsolutions.zelochat.ui.fragment.follow.UserFollowFragment"
+        android:label="fragment_user_follow"
+        tools:layout="@layout/fragment_user_follow" />
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="com.inteligenixsolutions.zelochat.ui.fragment.notification.NotificationFragment"
+        android:label="fragment_notification"
+        tools:layout="@layout/fragment_notification" />
 </navigation>

@@ -1,10 +1,10 @@
 package com.inteligenixsolutions.zelochat.di
 
-import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.annotations.NotNull
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import dagger.Module
@@ -12,6 +12,7 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
+
 
 @Module
 @InstallIn(SingletonComponent::class)
@@ -28,7 +29,11 @@ class FirebaseProvider {
     fun provideDb(): FirebaseDatabase {
         return FirebaseDatabase.getInstance()
     }
-
+//    @Provides
+//    @Singleton
+//    fun provideFirebaseDatabase(): DatabaseReference {
+//        return FirebaseDatabase.getInstance().reference
+//    }
 
     @Provides
     @Singleton
@@ -46,7 +51,11 @@ class FirebaseProvider {
         return database.getReference("user")
     }
 
-
+//    @Provides
+//    @Singleton
+//    fun provideDBReference(db: FirebaseDatabase): DatabaseReference {
+//      return db.getReference("Post")
+//    }
 
     @Provides
     @Singleton
@@ -55,6 +64,9 @@ class FirebaseProvider {
 
 
     }
+
+
+
 
 //
 //    @Provides

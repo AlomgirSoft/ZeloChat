@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
@@ -14,6 +15,7 @@ import com.inteligenixsolutions.zelochat.R
 import com.inteligenixsolutions.zelochat.base.BaseFragment
 import com.inteligenixsolutions.zelochat.data.login.RequestUserLogin
 import com.inteligenixsolutions.zelochat.databinding.FragmentLoginBinding
+import com.inteligenixsolutions.zelochat.ui.fragment.register.RegistretionFragment
 import com.inteligenixsolutions.zelochat.utils.ERROR
 import com.inteligenixsolutions.zelochat.utils.SUCCESS
 import dagger.hilt.android.AndroidEntryPoint
@@ -79,7 +81,8 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
         binding.rejistretionBtn.setOnClickListener {
 
 
-            findNavController().navigate(R.id.action_loginFragment_to_registretionFragment)
+            //findNavController().navigate(R.id.action_loginFragment_to_registretionFragment)
+            navigateTo(RegistretionFragment())
 
 
         }
@@ -93,5 +96,15 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
 
 
     }
+
+
+    private fun navigateTo(fragment: Fragment) {
+        val transaction =  (activity as FragmentActivity).supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.fragmentContainerView, fragment)
+
+        transaction.commit()
+    }
+
 
 }
